@@ -9,10 +9,11 @@
 .slider {
     display: flex; /* Usa flexbox para el diseño en línea */
     transition: transform 0.5s ease; /* Transición suave al cambiar de imagen */
+    width: 100%; /* Asegura que el slider ocupe el 100% de su contenedor */
 }
 
 .slide {
-    min-width: 100%; /* Asegura que cada slide ocupe el 100% del contenedor */
+    width: 100%; /* Cambiado de min-width a width */
     height: auto; /* Altura automática para mantener la proporción */
     overflow: hidden; /* Oculta contenido que sobresale */
     position: relative; /* Posiciona correctamente las imágenes */
@@ -57,4 +58,8 @@ body {
     .slide img {
         max-height: 250px; /* Ajusta la máxima altura para imágenes en tablets */
     }
+}
+
+* {
+    box-sizing: border-box; /* Ajusta el modelo de caja para evitar desbordamientos inesperados */
 }
