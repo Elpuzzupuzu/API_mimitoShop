@@ -1,8 +1,5 @@
-
-
-
 .slider-container {
-    width: 80%; /* Ancho del slider */
+    width: 90%; /* Ancho del slider, más ancho en móviles */
     max-width: 800px; /* Máximo ancho para asegurar la responsividad */
     overflow: hidden;
     position: relative;
@@ -16,20 +13,49 @@
 
 .slide {
     width: 100%; /* Ancho completo de cada slide */
-    height: 300px; /* Altura fija para cada slide */
+    height: auto; /* Altura automática para mantener la proporción */
     flex: 0 0 auto; /* No se ajusta automáticamente */
     overflow: hidden; /* Oculta contenido que sobresale */
     position: relative; /* Asegura que las imágenes se posicionen correctamente */
 }
 
 .slide img {
-  
     width: 100%; /* Ancho al 100% del contenedor */
-    height: 100%; /* Altura al 100% del contenedor */
-    object-fit: contain; /* Ajusta la imagen dentro del slide sin  */
+    height: auto; /* Altura automática para mantener la proporción */
+    max-height: 300px; /* Máxima altura para mantener el diseño */
+    object-fit: cover; /* Cubre el área del slide */
 }
 
 body {
     overflow-x: hidden; /* Deshabilita la barra de desplazamiento horizontal */
 }
 
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+    .slider-container {
+        width: 95%; /* Más ancho en móviles */
+    }
+
+    .slide {
+        height: 200px; /* Ajusta la altura del slide en móviles */
+    }
+
+    .slide img {
+        max-height: 200px; /* Ajusta la máxima altura para imágenes en móviles */
+    }
+}
+
+/* Media query para tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .slider-container {
+        width: 95%; /* Mantiene el ancho para tabletas */
+    }
+
+    .slide {
+        height: 250px; /* Ajusta la altura del slide en tablets */
+    }
+
+    .slide img {
+        max-height: 250px; /* Ajusta la máxima altura para imágenes en tablets */
+    }
+}
