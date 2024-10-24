@@ -1,29 +1,28 @@
 .slider-container {
-    width: 90%; /* Ancho del slider, más ancho en móviles */
+    width: 100%; /* Ocupa el 100% del ancho de la pantalla */
     max-width: 800px; /* Máximo ancho para asegurar la responsividad */
-    overflow: hidden;
-    position: relative;
+    overflow: hidden; /* Oculta el contenido que se sale del contenedor */
+    position: relative; /* Posición relativa para los elementos hijos */
     margin: 0 auto; /* Centra el slider horizontalmente */
 }
 
 .slider {
-    display: flex;
-    transition: transform 0.5s ease;
+    display: flex; /* Usa flexbox para el diseño en línea */
+    transition: transform 0.5s ease; /* Transición suave al cambiar de imagen */
 }
 
 .slide {
-    width: 100%; /* Ancho completo de cada slide */
+    min-width: 100%; /* Asegura que cada slide ocupe el 100% del contenedor */
     height: auto; /* Altura automática para mantener la proporción */
-    flex: 0 0 auto; /* No se ajusta automáticamente */
     overflow: hidden; /* Oculta contenido que sobresale */
-    position: relative; /* Asegura que las imágenes se posicionen correctamente */
+    position: relative; /* Posiciona correctamente las imágenes */
 }
 
 .slide img {
     width: 100%; /* Ancho al 100% del contenedor */
     height: auto; /* Altura automática para mantener la proporción */
     max-height: 300px; /* Máxima altura para mantener el diseño */
-    object-fit: cover; /* Cubre el área del slide */
+    object-fit: cover; /* Ajusta la imagen dentro del slide sin deformarla */
 }
 
 body {
@@ -37,7 +36,7 @@ body {
     }
 
     .slide {
-        height: 200px; /* Ajusta la altura del slide en móviles */
+        max-height: 200px; /* Ajusta la máxima altura para imágenes en móviles */
     }
 
     .slide img {
@@ -52,7 +51,7 @@ body {
     }
 
     .slide {
-        height: 250px; /* Ajusta la altura del slide en tablets */
+        max-height: 250px; /* Ajusta la máxima altura para imágenes en tablets */
     }
 
     .slide img {
