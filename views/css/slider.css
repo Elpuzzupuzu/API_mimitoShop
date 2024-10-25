@@ -547,6 +547,7 @@ html{
 
 .main-content{
     background-color: var(--background-color);
+    overflow: hidden;
 
 
 }
