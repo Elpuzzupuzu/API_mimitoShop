@@ -81,7 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         <img src="${product.img}" alt="Producto">
                         <span class="discount">-13%</span>
                         <div class="button-group">
-                            <span><i class="fa-solid fa-eye"></i></span>
+                            <!-- Icono del ojo con data-product-id -->
+                            <span class="view-details" data-product-id="${product.id_product}">
+                                <i class="fa-solid fa-eye"></i>
+                            </span>
                             <span><i class="fa-regular fa-heart"></i></span>
                             <span><i class="fa-solid fa-code-compare"></i></span>
                         </div>
@@ -122,8 +125,14 @@ document.addEventListener('DOMContentLoaded', function () {
             productDiv.querySelector(`#play-${product.id_product}`).addEventListener('click', () => {
                 reproducirDescripcion(product.description);
             });
+    
+            // Evento para redirigir a la página de detalles del producto
+            productDiv.querySelector('.view-details').addEventListener('click', () => {
+                window.location.href = `producto.html?productId=${product.id_product}`;
+            });
         });
     }
+    
     
     // Función para reproducir la descripción usando ResponsiveVoice
     function reproducirDescripcion(description) {
